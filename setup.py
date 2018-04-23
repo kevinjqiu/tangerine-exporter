@@ -19,7 +19,7 @@ setuptools.setup(
     author="Kevin J. Qiu",
     author_email="kevin@idempotent.ca",
 
-    description="A Prometheus exporter for metrics of your Tangerine bank accounts."
+    description="A Prometheus exporter for metrics of your Tangerine bank accounts.",
     long_description=open('README.md').read(),
 
     include_package_data=True,
@@ -27,6 +27,12 @@ setuptools.setup(
     packages=['tangerine_exporter'],
 
     install_requires=get_install_requires(),
+
+    entry_points={
+        'console_scripts': [
+            'tangerine-exporter=tangerine_exporter.main:main'
+        ]
+    },
 
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
